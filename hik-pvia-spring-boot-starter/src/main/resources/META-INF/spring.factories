@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  io.en1s0o.hik.pvia.starter.config.HikPVIAAutoConfiguration

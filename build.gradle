@@ -1,0 +1,46 @@
+allprojects {
+    group = 'io.en1s0o'
+    version '1.0.0'
+    apply plugin: 'java'
+    apply plugin: 'application'
+}
+
+subprojects {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    // apply plugin: 'org.springframework.boot' // '2.5.1'
+    // apply plugin: 'io.spring.dependency-management' // '1.0.11.RELEASE'
+
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+    repositories {
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven { url "https://repo.spring.io/libs-release" }
+        mavenCentral()
+        maven { url 'https://repo1.maven.org/maven2/' }
+    }
+
+    dependencies {
+        implementation 'org.slf4j:slf4j-api:1.7.30'
+        compileOnly 'org.projectlombok:lombok:1.18.20'
+        annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+        testImplementation 'org.mockito:mockito-junit-jupiter:3.11.1'
+    }
+}
+
+buildscript {
+    repositories {
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        mavenCentral()
+        maven { url "https://repo.spring.io/libs-release" }
+        maven { url 'https://repo1.maven.org/maven2/' }
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.5.1")
+    }
+}

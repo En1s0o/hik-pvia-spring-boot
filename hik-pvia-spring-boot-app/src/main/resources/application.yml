@@ -1,0 +1,16 @@
+hik:
+  # 填写登录 PVIA 的信息
+  cas:
+    host: "${HIK_CAS_HOST:https://xxx:443/}"
+    username: "${HIK_CAS_USERNAME:admin}"
+    password: "${HIK_CAS_PASSWORD:xxx}"
+    # 添加设备时使用，需要调试 PVIA 页面代码才能得到
+    aes-key: "${HIK_CAS_AES_KEY:xresmgr-20190311}"
+    # body 可以打印详细的网络交互
+    network-logging-level: none
+  # 填写根节点信息
+  organization:
+    catalog-index-code: "${CATALOG_INDEX_CODE:10}"
+    region-name: "${REGION_NAME:xxx}"
+    region-index-code: "${REGION_INDEX_CODE:xxx}"
+    region-external-code: "${REGION_EXTERNAL_CODE:xxx}"

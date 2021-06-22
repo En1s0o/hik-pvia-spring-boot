@@ -1,0 +1,5 @@
+rootProject.name = 'hik-pvia-spring-boot'
+
+include 'io-en1s0o-common'
+include 'hik-pvia-spring-boot-starter'
+include 'hik-pvia-spring-boot-app'
